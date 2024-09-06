@@ -131,7 +131,7 @@ export function Presenter(props: Props) {
           )}
         </nav>
       </header>
-      <div className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 bg-white border border-gray-300 rounded-full bottom-4 left-1/2 sm:block md:hidden">
+      <div className="fixed z-50 w-full h-14 max-w-lg -translate-x-1/2 bg-white border border-gray-300 rounded-full bottom-4 left-1/2 sm:block md:hidden">
         <div className="grid h-full max-w-lg grid-cols-5 mx-auto">
           <button
             data-tooltip-target="tooltip-home"

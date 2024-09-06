@@ -26,7 +26,7 @@ export function Presenter(props: Props) {
         <div className="flex flex-col items-center">
           <div className="text-gray-600 text-xl pb-8 flex items-center">
             <FaUpload className="mr-2" />
-            画像アップロード
+            アルバムに追加する
           </div>
           <div className="flex flex-col items-center w-full max-w-sm">
             <input

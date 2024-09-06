@@ -52,13 +52,13 @@ export function Presenter({ data, router }: Props) {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-row items-center justify-between mt-20 sm:mt-24 md:mt-28 mb-6">
         <div className="flex items-center sm:mb-0">
-          <FaClock className="text-xl sm:text-2xl text-green-800 mr-2" />
-          <h2 className="text-xl sm:text-2xl font-bold text-green-800">新郎新婦からのお知らせ</h2>
+          <FaClock className="text-xl sm:text-2xl text-green-600 mr-2" />
+          <h2 className="text-xl sm:text-2xl font-bold text-green-600">新郎新婦からのお知らせ</h2>
         </div>
         {isAdmin&&<div>
           <button
             onClick={() => router.push('/post')}
-            className="bg-green-700 text-white px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base rounded-lg hover:bg-green-800 transition duration-300"
+            className="bg-green-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base rounded-lg hover:bg-green700 transition duration-300"
           >
             投稿する
           </button>
