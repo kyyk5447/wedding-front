@@ -1,17 +1,19 @@
+import { AmountModal } from './AmountModal';
 import styles from './index.module.scss';
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { AmountModal } from './AmountModal';
 import { FaMoneyBillAlt } from 'react-icons/fa'; 
 
 export function Presenter() {
   const { push } = useRouter();
-  const [price, setPrice] = useState<number | "">(""); // 初期値を0に設定
-  const [comment, setComment] = useState<string>("");  // 初期値を0に設定
+  const [price, setPrice] = useState<number | null>(null);  // 初期値を0に設定
+  const [isCustom, setIsCustom] = useState<boolean>(false); // 初期値を0に設定
+  const [comment, setComment] = useState<string>("");  
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
-  const handleAmountSelect = (amount: number) => {
+  const handleAmountSelect = (amount: number, custom: boolean) => {
     setPrice(amount);
+    setIsCustom(custom);
   };
 
   return (
@@ -28,12 +30,15 @@ export function Presenter() {
           </button>
         </div>
 
-        {price !== "" && (
+        {price !== null && (
           <div className="mt-4">
-            <p className="text-lg font-semibold text-green-800">選択した金額: {price === "custom" ? "カスタム金額" : `${price}円`}</p>
+            <p className="text-lg font-semibold text-green-800">
+              選択した金額: {isCustom ? `${price}円` : `${price}円`}
+            </p>
           </div>
         )}
-  <br />
+        
+        <br />
         <div className="relative w-full mb-4">
           <textarea
             id="comment"
